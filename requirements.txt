@@ -6,3 +6,5 @@ chromadb
 openai
 sentence_transformers
 pypdf
+gradio
+gdown
