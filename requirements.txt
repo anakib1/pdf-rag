@@ -1,10 +1,9 @@
 langchain
 langchain-community
-langchainhub
 langchain-openai
 chromadb
 openai
 sentence_transformers
-pypdf
+pypdf~=4.2.0
 gradio
 gdown
