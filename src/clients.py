@@ -33,8 +33,6 @@ class AcademicClient:
             self.vectordb = Chroma(persist_directory='src/db', embedding_function=OpenAIEmbeddings())
         else:
             print('Not found cached DB. Rebuilding DB state, could use money from OPENAI!!!!')
-            raise Exception('BAAAAAAAAAAd')
-            return
             texts = embed_pdf()
             self.vectordb = Chroma.from_documents(
                 documents=texts,

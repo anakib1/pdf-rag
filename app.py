@@ -12,7 +12,7 @@ def perform_qa(query):
 
 css = """
 body {
-    text-align: center;
+    align-items: center;
     display:block;
 }
 """
@@ -21,8 +21,8 @@ with gr.Blocks(css=css) as demo:
     gr.Markdown('Wisdom.AI'),
     gr.Image('misc/wisdom.jpg', height=600, width=400)
     with gr.Row():
-        inp = gr.Textbox('Що б ви хотіли дізнатися у мудрого?')
-        out = gr.Textbox('Мудрий каже...')
+        inp = gr.Textbox('Що б ви хотіли дізнатися у мудрого?', label='Питання')
+        out = gr.Textbox('Мудрий каже...', label='Відповідь')
 
     btn = gr.Button('Спитати')
     btn.click(fn=perform_qa, inputs=inp, outputs=out)
