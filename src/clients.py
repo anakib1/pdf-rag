@@ -43,7 +43,8 @@ class AcademicClient:
 
     def __init__(self):
         self.create_vectordb()
-        self.chain = PdfAndGoogleChain(self.vectordb.as_retriever())
+        self.chain = PdfAndGoogleChain(
+            self.vectordb.as_retriever(search_type="mmr", search_kwargs={"fetch_k": 30, "k": 6}))
 
-    def answer(self, query):
-        return self.chain.answer(query)
+    def answer(self, query, options):
+        return self.chain.answer(query, options)
