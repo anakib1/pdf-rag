@@ -12,8 +12,8 @@ def embed_pdf(folder: str = 'data', name: str = 'book.pdf'):
     path = pathlib.Path(folder).joinpath(name)
     if not path.exists():
         print('Downloading book PDF.')
-        gdown.download('https://drive.google.com/file/d/1CwhFM4gInp9xV4G4sdnYE_rN0StmqQ2z/view?usp=sharing',
-                       str(path))
+        gdown.download('https://drive.google.com/file/d/1CwhFM4gInp9xV4G4sdnYE_rN0StmqQ2z/view?usp=drive_link',
+                       str(path), fuzzy=True)
     loader = PyPDFLoader(str(path))
     documents = loader.load()
     splitter = RecursiveCharacterTextSplitter(
